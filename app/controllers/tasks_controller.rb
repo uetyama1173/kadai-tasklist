@@ -1,8 +1,9 @@
 class TasksController < ApplicationController
   before_action :set_task, only: [:show, :edit, :update, :destroy]
+
   
-  def index 
-    @tasks = Task.all
+  def index
+   @tasks= Task.all
   end
 
   def show
@@ -37,6 +38,7 @@ class TasksController < ApplicationController
       flash.now[:danger] = 'Task は更新されませんでした'
       render :edit
     end
+    
   end
 
   def destroy
